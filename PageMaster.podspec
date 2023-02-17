@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.swift_version = "4.2"
   s.source       = { :git => "https://github.com/PKPK-Carnage/PageMaster.git", :tag => "#{s.version}" }
-  s.source_files  = "Classes", "Classes/*.{swift}"
+  s.source_files = 'Sources/PageMaster/*'
   s.requires_arc = true
 
 end
