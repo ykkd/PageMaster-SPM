@@ -199,7 +199,9 @@ extension PageMaster: UIPageViewControllerDataSource {
 extension PageMaster: UIPageViewControllerDelegate {
     
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        let current = pageViewController.viewControllers![0]
-        self.currentPage = self.vcList.firstIndex(of: current)!
+        if let current = pageViewController.viewControllers?[safe: 0],
+           let currentPage = self.vcList.firstIndex(of: current) {
+            self.currentPage = currentPage
+        }
     }
 }
